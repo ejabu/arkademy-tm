@@ -16,15 +16,15 @@ Arkana is helping developers to learn Odoo by Arkademy Training
 
 ## Syntax Learning
 
-To prevent unproductive training session, [Arkana](https://www.instagram.com/arkanadigital/) compiled most-used syntax in building Odoo modules. With our experienced, we underlined most frequent syntax used in this training and set it up as *Auto-Completion*. Arkademy enthusiastically encourages trainee to use VS Code and its extension, [Arkademy - Odoo Technical Training](https://marketplace.visualstudio.com/items?itemName=arkademy.arkademy-training)
+To prevent unproductive training session, [Arkana](https://www.instagram.com/arkanadigital/) compiled most-used syntax in building Odoo modules. With our experienced, we underlined most-frequent syntax used in this training and set it up as *Auto-Completion*. Arkademy enthusiastically encourages trainee to use VS Code and its extension, [Arkademy - Odoo Technical Training](https://marketplace.visualstudio.com/items?itemName=arkademy.arkademy-training)
 
-* **Auto Completion:** Odoo syntax sometimes is felt atypical to some developers. This extension and prevents mistyped syntax with 1600 Lines of snippets both in **python** and **xml**.
-* **Keyboard Shortcuts:** This extension also alters and adds additional new shortcut that frequently used in our Odoo-related work.
+* **Auto Completion:** Odoo syntax sometimes is felt atypical to some developers. This extension prevents mistyped syntax with 1600 lines of snippets both in **python** and **xml**.
+* **Keyboard Shortcuts:** This extension also alters and adds additional shortcut that frequently used in our Odoo-related work.
 
 
 ## Step-by-Step Learning
 
-This material comprises of 18 beautifully-crafted module. Generally, this material is divided into three business app: **Toko**, **Cafe** and **Sale Promotion**. Also, as additional material, we provide **Write - ORM** module to help trainee learns built-in object-relational mapping systematically and comprehensively.
+This material comprises of 18 beautifully-crafted modules. Generally, this material is divided into three business app: **Toko**, **Cafe** and **Sale Promotion**. Also, as additional material, we provide **Write - ORM** module to help trainee learns built-in object-relational mapping systematically and comprehensively.
 
 ![](modules.png)
 
