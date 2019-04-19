@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- List View -->
+        <record model="ir.ui.view" id="cafe_order_tree">
+            <field name="name">cafe.order.tree</field>
+            <field name="model">cafe.order</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="date_order"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="cafe_order_form">
+            <field name="name">cafe.order.form</field>
+            <field name="model">cafe.order</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" clickable="True"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" class="oe_inline"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="customer" placeholder="misal : Khairul"/>
+                            </group>
+                            <group>
+                                <field name="date_order"/>
+                                <field name="pegawai_id" options="{'no_open': True, 'no_create': True}" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Order Detail">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="produk_id" domain="[('is_aktif', '=', True)]"/>
+                                        <field name="quantity"/>
+                                        <field name="price"/>
+                                        <field name="price_total"/>
+                                    </tree>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2">
+                                    <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                        <label for="amount_total" />
+                                    </div>
+                                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cafe_order_action">
+            <field name="name">Cafe Order</field>
+            <field name="res_model">cafe.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="submenu_cafe_order"
+            name="Cafe Order"
+            parent="cafe_transaksi_menu"
+
+            action="cafe_order_action"
+        />
+
+    </data>
+</odoo>

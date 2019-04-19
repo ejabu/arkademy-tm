@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cafe_produk_form">
+            <field name="name">cafe.produk.form</field>
+            <field name="model">cafe.produk</field>
+            <field name="inherit_id" ref="cafe.cafe_produk_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                    <notebook>
+                        <page string="Tingkat Kematangan">
+                            <label for="matang_ids" string="Matang"/>
+                            <field name="matang_ids"/>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cafe_produk_tree">
+            <field name="name">cafe.produk.tree</field>
+            <field name="model">cafe.produk</field>
+            <field name="inherit_id" ref="cafe.cafe_produk_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="editable"></attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

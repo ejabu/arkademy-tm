@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pay_order_wizard" model="ir.ui.view">
+            <field name="name">pay.order.wizard</field>
+            <field name="model">pay.order.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="amount_total" readonly="1"/>
+                        <field name="payment_amount"/>
+                        <field name="payment_return" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button name="process_wizard"
+                            string="Process"
+                            type="object"
+                            class="oe_highlight"
+                            />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

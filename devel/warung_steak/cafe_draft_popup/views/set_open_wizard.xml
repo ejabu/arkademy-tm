@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="set_open_wizard" model="ir.ui.view">
+            <field name="name">set.open.wizard</field>
+            <field name="model">set.open.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <footer>
+                        <button name="process_wizard"
+                            string="Process"
+                            type="object"
+                            class="oe_highlight"
+                            />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

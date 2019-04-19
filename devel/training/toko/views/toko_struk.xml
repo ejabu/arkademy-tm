@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="toko_struk_tree">
+            <field name="name">toko.struk.tree</field>
+            <field name="model">toko.struk</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="price_total" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="toko_struk_form">
+            <field name="name">toko.struk.form</field>
+            <field name="model">toko.struk</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="set_open"
+                            string="Set Open"
+                            states="draft"
+                            type="object"
+                        />
+                        <button name="get_price_total"
+                            string="Calculate"
+                            type="object"
+                        />
+                        <field name="state" widget="statusbar" clickable="True"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="pegawai_id" options="{'no_open': True, 'no_create': True}"/>
+                            </group>
+                            <group>
+                                <field name="price_total"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Line">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="quantity"/>
+                                        <field name="price"/>
+                                        <field name="price_total" sum="Total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Info">
+                                <field name="detail"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="toko_struk_action">
+            <field name="name">Toko Struk</field>
+            <field name="res_model">toko.struk</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="kakek_toko_struk" 
+            name="Kakek Toko Struk" 
+        />
+
+        <menuitem 
+            id="bapak_toko_struk" 
+            name="Bapak Toko Struk" 
+            parent="kakek_toko_struk" 
+        />
+
+        <menuitem 
+            id="anak_toko_struk" 
+            name="Anak Toko Struk" 
+            parent="bapak_toko_pegawai"
+            sequence="20"
+
+            action="toko_struk_action" 
+        />
+
+    </data>
+</odoo>

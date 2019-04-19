@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Search View -->
+        <record model="ir.ui.view" id="cafe_order_line_search">
+            <field name="name">cafe.order.line.search</field>
+            <field name="model">cafe.order.line</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="produk_id"/>
+                    <group>
+                        <filter name="gr_produk_id" string="Produk" context="{'group_by':'produk_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record model="ir.ui.view" id="cafe_order_line_tree">
+            <field name="name">cafe.order.line.tree</field>
+            <field name="model">cafe.order.line</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="produk_id"/>
+                    <field name="quantity" avg="Average"/>
+                    <field name="price"/>
+                    <field name="price_total" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Graph View -->
+        <record model="ir.ui.view" id="cafe_order_line_graph">
+            <field name="name">cafe.order.line.graph</field>
+            <field name="model">cafe.order.line</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <field name="produk_id" type="row"/>
+                    <field name="quantity" type="measure"/>
+                    <field name="price_total" type="measure"/>
+                </graph>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="cafe_order_line_action">
+            <field name="name">Report Order Line</field>
+            <field name="res_model">cafe.order.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,graph</field>
+        </record>
+
+        <menuitem 
+            id="submenu_cafe_order_line"
+            name="Order Line"
+            parent="cafe_report_menu"
+            sequence="20"
+            action="cafe_order_line_action"
+        />
+
+    </data>
+</odoo>

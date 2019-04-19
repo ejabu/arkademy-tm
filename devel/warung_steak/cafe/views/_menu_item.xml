@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="cafe_menu" name="Cafe" sequence="1"/>
+
+        <menuitem
+            id="cafe_transaksi_menu"
+            name="Transaksi"
+            parent="cafe_menu"
+            sequence="20"
+        />
+        <menuitem
+            id="cafe_data_menu"
+            name="Data"
+            parent="cafe_menu"
+            sequence="30"
+        />
+    </data>
+</odoo>

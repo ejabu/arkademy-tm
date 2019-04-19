@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="example_orm_menu" name="Write ORM" sequence="20"/>
+    </data>
+</odoo>

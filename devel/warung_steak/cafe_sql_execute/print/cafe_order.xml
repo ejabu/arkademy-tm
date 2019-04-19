@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template 
+            id="cafe_order_template" 
+            inherit_id="cafe_print.cafe_order_template">
+            <xpath expr="//div" position="after">
+                <div>
+                    Order Line
+                    <span t-esc="doc.query_order_line()"/>
+                </div>
+            </xpath>
+        </template>
+        <template 
+            id="cafe_order_complex_template" 
+            inherit_id="cafe_print.cafe_order_complex_template">
+            <xpath expr="//div[@class='order_line']" position="after">
+                <div>
+                    Order Line
+                    <span t-esc="doc.query_order_line()"/>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

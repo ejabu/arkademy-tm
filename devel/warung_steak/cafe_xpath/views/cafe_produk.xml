@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cafe_produk_form">
+            <field name="name">cafe.produk.form</field>
+            <field name="model">cafe.produk</field>
+            <field name="inherit_id" ref="cafe.cafe_produk_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='is_aktif']" position="attributes">
+                    <attribute name="groups">cafe_security.group_cafe_manager</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

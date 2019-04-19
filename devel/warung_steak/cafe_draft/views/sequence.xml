@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0"> <!-- Tips: File ini tidak di-baca ketika -u -->
+        <record model="ir.sequence" id="cafe_order_sequence" >
+            <field name="name">Cafe order</field>
+            <field name="code">cafe.order.sequence</field>
+            <field name="prefix">Order-</field>
+            <field name="padding">5</field>
+            <field name="suffix">-%(day)s-%(month)s-%(y)s</field>
+        </record>
+    </data>
+</odoo>

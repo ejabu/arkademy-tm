@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cafe_order_form">
+            <field name="name">cafe.order.form</field>
+            <field name="model">cafe.order</field>
+            <field name="inherit_id" ref="cafe.cafe_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_order']" position="before">
+                    <field name="note" />
+                </xpath>
+                <xpath expr="//field[@name='state']" position="before">
+                    <button name="set_open"
+                        string="Set Open"
+                        type="object"
+                    />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

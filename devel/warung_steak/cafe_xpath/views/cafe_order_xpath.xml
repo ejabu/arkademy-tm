@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cafe_order_xpath_form">
+            <field name="name">cafe.order.form</field>
+            <field name="model">cafe.order</field>
+            <field name="inherit_id" ref="cafe_draft.cafe_order_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//notebook" position="inside">
+                    <page string="Other Info">
+                        <field name="note_text"/>
+                    </page>
+                </xpath>
+                
+                <xpath expr="//field[@name='note']" position="replace">
+                </xpath>
+                <!-- <xpath expr="//field[@name='note']" position="replace">
+                    <field name="note" placeholder="e.g Nomor Meja"/>
+                </xpath>
+                <xpath expr="//field[@name='note']" position="attributes">
+                    <attribute name="required">1</attribute>
+                </xpath> -->
+               
+            </field>
+        </record>
+        <record model="ir.ui.view" id="cafe_order_xpath_2_form">
+            <field name="name">cafe.order.form</field>
+            <field name="model">cafe.order</field>
+            <field name="inherit_id" ref="cafe.cafe_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[1]/field[@name='line_ids']/tree/field[@name='produk_id']" position="after">
+                    <field name="matang_id"/>
+                    <!-- Domain on Name --> 
+                    <!-- <field name="matang_id" domain="[('name', 'ilike', 'well')]"/> -->
+
+                    <!-- Error --> 
+                    <!-- <field name="matang_id" domain="[('id', 'in', produk_id.matang_ids)]"/>  -->
+
+                    <!-- Domain on Related Fields --> 
+                    <!-- <field name="matang_id" domain="[('id', 'in', matang_ids)]"/> -->
+                    <!-- <field name="matang_ids"/> -->
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page[1]/field[@name='line_ids']/tree/field[@name='price']" position="attributes">
+                    <attribute name="group">cafe_security.group_cafe_manager</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

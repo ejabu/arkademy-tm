@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="toko_pegawai_tree">
+            <field name="name">toko.pegawai.tree</field>
+            <field name="model">toko.pegawai</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="alamat"/>
+                    <field name="gender"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="toko_pegawai_form">
+            <field name="name">toko.pegawai.form</field>
+            <field name="model">toko.pegawai</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="alamat"/>
+                                <field name="tahun_masuk"/>
+                                <field name="indeks_prestasi"/>
+                            </group>
+                            <group>
+                                <field name="tanggal_lahir"/>
+                                <field name="waktu_bangun"/>
+                                <field name="gender"/>
+                                <field name="is_part_time"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Riwayat Jual">
+                                <field name="struk_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="toko_pegawai_action">
+            <field name="name">Toko Pegawai</field>
+            <field name="res_model">toko.pegawai</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="kakek_toko_pegawai" 
+            name="Kakek Toko Pegawai" 
+        />
+
+        <menuitem 
+            id="bapak_toko_pegawai" 
+            name="Bapak Toko Pegawai" 
+            parent="kakek_toko_pegawai" 
+        />
+
+        <menuitem 
+            id="anak_toko_pegawai" 
+            name="Anak Toko Pegawai" 
+            parent="bapak_toko_pegawai" 
+            sequence="10"
+
+            action="toko_pegawai_action" 
+        />
+
+    </data>
+</odoo>

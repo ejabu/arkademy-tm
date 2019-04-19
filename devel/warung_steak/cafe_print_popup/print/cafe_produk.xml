@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="cafe_produk_print"
+            model="cafe.produk"
+            string="Cafe Produk"
+            name="cafe_print_popup.cafe_produk_template"
+            report_type="qweb-pdf"
+            print_report_name="'Cafe Produk - %s' % (object.name)"
+            paperformat="base.paperformat_us"/>
+        />
+        <template id="cafe_produk_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div>
+                       <span t-esc="doc_index+1"/>. <span t-esc="doc.name"/> Rp.  <span t-esc="doc.price"/> <span t-esc="'{:,.0f}'.format(doc.price)"/>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

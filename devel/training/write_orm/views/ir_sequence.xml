@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="ir.sequence" id="seq_example_orm_line">
+            <field name="name">Nomenclature untuk ORM Line</field>
+            <field name="code">example.orm.line.default</field>
+            <field name="prefix">ELC/%(year)s/</field>
+            <field name="padding">4</field>
+        </record>  
+        <record model="ir.sequence" id="seq_example_orm_line_app_code">
+            <field name="name">Nomenclature untuk ORM Line APP Code</field>
+            <field name="code">example.orm.line.app</field>
+            <field name="padding">4</field>
+        </record>  
+    </data>
+</odoo>

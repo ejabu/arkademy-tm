@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pay_order_wizard_form">
+            <field name="name">pay.order.wizard</field>
+            <field name="model">pay.order.wizard</field>
+            <field name="inherit_id" ref="cafe_payment.pay_order_wizard"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="before">
+                    <group>
+                        <field name="payment_method"/>
+                        <field name="payment_ref" attrs="{'invisible':[('payment_method', '=', 'cash')], 'required':[('payment_method', '=', 'card')]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

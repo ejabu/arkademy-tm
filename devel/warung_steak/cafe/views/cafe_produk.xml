@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Search View -->
+        <record model="ir.ui.view" id="cafe_produk_search">
+            <field name="name">cafe.produk.search</field>
+            <field name="model">cafe.produk</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="kode"/>
+                    <field name="name"/>
+
+                    <filter name="fl_makan" string="Makanan" domain="[('tipe','=', 'makanan')]"/>
+                    <filter name="fl_minum" string="Minuman" domain="[('tipe','=', 'minuman')]"/>
+                    <separator/>
+                    <filter name="fl_aktif" string="Aktif" domain="[('is_aktif','=', True)]"/>
+                    <filter name="fl_naktif" string="Non Aktif" domain="[('is_aktif','=', False)]"/>
+                    <separator/>
+                    <filter name="fl_lt6000" string="Less or Equal 6000" domain="[('price','&lt;=', 6000)]"/>
+                    <filter name="fl_gt6000" string="More 6000" domain="[('price','&gt;', 6000)]"/>
+                    <group>
+                        <filter name="gr_tipe" string="Tipe" context="{'group_by':'tipe'}"/>
+                        <separator/>
+                        <filter name="gr_aktif" string="Aktif" context="{'group_by':'is_aktif'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record model="ir.ui.view" id="cafe_produk_tree">
+            <field name="name">cafe.produk.tree</field>
+            <field name="model">cafe.produk</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="kode"/>
+                    <field name="name"/>
+                    <field name="price" avg="Average"/>
+                    <field name="tipe" string="Kategori"/>
+                    <field name="is_aktif"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="cafe_produk_form">
+            <field name="name">cafe.produk.form</field>
+            <field name="model">cafe.produk</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="kode"/>
+                        <field name="name"/>
+                        <field name="price"/>
+                        <field name="tipe"/>
+                        <field name="is_aktif"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="cafe_produk_action">
+            <field name="name">Daftar Produk</field>
+            <field name="res_model">cafe.produk</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="submenu_cafe_produk"
+            name="Produk"
+            parent="cafe_data_menu"
+            sequence="30"
+
+            action="cafe_produk_action"
+        />
+
+    </data>
+</odoo>

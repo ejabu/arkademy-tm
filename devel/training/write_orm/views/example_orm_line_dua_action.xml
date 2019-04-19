@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Tree view for the menuitem -->
+        <record id="example_orm_line_tree" model="ir.ui.view">
+            <field name="name">example.orm.line.tree</field>
+            <field name="model">example.orm.line</field>
+            <field name="priority">30</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" create="true" edit="false" delete="false">
+                    <field name="example_id"/>
+                    <field name="name"/>
+                    <field name="detail"/>
+                    <field name="amount" sum="Total"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Tree view for the menuitem -->
+        <record id="example_orm_line_new_tree" model="ir.ui.view">
+            <field name="name">example.orm.line.tree</field>
+            <field name="model">example.orm.line</field>
+            <field name="priority">60</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" create="true" edit="false" delete="false">
+                    <field name="example_id"/>
+                    <field name="name"/>
+                    <field name="detail"/>
+                    <field name="amount" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Search view for the menuitem -->
+        <record id="example_orm_line_search" model="ir.ui.view">
+            <field name="name">example.orm.line.search</field>
+            <field name="model">example.orm.line</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="example_id"/>
+                    <field name="name"/>
+                    <field name="detail" string="Keterangan"/>
+                    <field name="amount"/>
+                    <filter string="Gak Punya Header"
+                        name='gak_punya_header' 
+                        domain="[('example_id', '=', False)]"
+                        help="Filter semua link yang nganggur"/>
+                    <group>
+                        <filter name="example_group" string="by Example ID" context="{'group_by':'example_id'}" help="Akan di-grup sesuai Header / Example"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <!-- Form view for the menuitem -->
+        <record id="example_orm_line_form" model="ir.ui.view">
+            <field name="name">example.orm.line.form</field>
+            <field name="model">example.orm.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="example_orm_line_action" model="ir.actions.act_window">
+            <field name="name">Example ORM Line</field>
+            <field name="res_model">example.orm.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="domain">[('example_id', '=', False)]</field> -->
+            <field name="context">{'search_default_gak_punya_header': 1}</field>
+        </record>
+        
+        <record id="example_orm_line_new_action" model="ir.actions.act_window">
+            <field name="name">Example ORM Line</field>
+            <field name="res_model">example.orm.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="domain">[('example_id', '=', False)]</field> -->
+            <field name="context">{'search_default_gak_punya_header': 1}</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('write_orm.example_orm_line_new_tree')}),
+                ]"/>
+        </record>
+        
+        <menuitem 
+            id="sub_example_orm_line_menu" 
+            parent="example_orm_menu" 
+            name="Example ORM Line" 
+            sequence="20" 
+            action="example_orm_line_action" />
+
+        <menuitem 
+            id="sub_example_orm_line_menu_new" 
+            parent="example_orm_menu" 
+            name="Example ORM Line (Simplified)" 
+            sequence="30" 
+            action="example_orm_line_new_action" />
+        
+        
+    </data>
+</odoo>

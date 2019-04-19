@@ -1,0 +1,31 @@
+id,name,indeks_prestasi,tahun_masuk,tanggal_lahir,is_part_time,gender,alamat
+1.55539735689283E+017,Arif,3.5,2013,1988-05-22,TRUE,l,"Jl Abc no 13 
+RT/RW 06/15 
+Jakarta Timur"
+1.55539735787525E+017,Bambang,2.7,2013,1984-12-18,TRUE,l,"Jl Def no 21 
+RT/RW 02/17 
+Jakarta Selatan"
+1.55539735917052E+017,Citra,3.4,2013,1968-02-01,TRUE,p,"Jl Klm no 13 
+RT/RW 12/15 
+Jakarta Timur"
+1.55539735984182E+017,Dwi,3.2,2014,1988-04-10,TRUE,l,"Jl Ghi no 13 
+RT/RW 01/004 
+Jakarta Timur"
+1.55539736109502E+017,Eka,3,2014,1993-08-15,FALSE,l,"Jl Xyz no 13 
+RT/RW 05/02 
+Jakarta Barat"
+1.55539736233048E+017,Farida,3.9,2016,1995-11-12,TRUE,p,"Jl Obq no 13 
+RT/RW 12/15 
+Jakarta Selatan"
+1.55539736309947E+017,Gembong,3.2,2017,1983-03-28,TRUE,l,"Jl Jhk no 13 
+RT/RW 04/15 
+Jakarta Timur"
+1.55539736417403E+017,Hidayat,2.5,2017,1970-04-29,FALSE,l,"Jl Stu no 09 
+RT/RW 02/15 
+Jakarta Pusat"
+1.55539736595472E+017,Ika,2.4,2018,1988-09-30,TRUE,p,"Jl Bto no 13 
+RT/RW 02/01 
+Jakarta Barat"
+1.55539736665915E+017,Kurniawan,3.3,2016,1991-10-30,FALSE,l,"Jl Hui no 13 
+RT/RW 09/03 
+Jakarta Pusat"

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="catalog_wizard_action">
+            <field name="name">Print Catalog</field>
+            <field name="res_model">catalog.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem
+            id="catalog_wizard_menu"
+            name="Catalog"
+            parent="cafe.cafe_menu"
+            action="catalog_wizard_action"
+            sequence="40"
+        />
+    </data>
+</odoo>
