@@ -19,7 +19,7 @@
   'installable': True,
   'application': True,
   'category': '- Arkademy Part 2',
-  'summary': 'Penggunaan API Write pada ORM Odoo',
+  'summary': 'Create, Browse, Write, Unlink pada ORM',
   'license': 'OPL-1',
   'website': 'https://www.arkana.co.id/',
   'description': '-'

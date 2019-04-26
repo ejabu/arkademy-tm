@@ -6,7 +6,8 @@
             <field name="name">buah.mangga.tree</field>
             <field name="model">buah.mangga</field>
             <field name="arch" type="xml">
-                <tree edit="false">
+                <tree>
+                    <field name="id"/>
                     <field name="name"/>
                     <field name="warna"/>
                 </tree>
@@ -80,6 +81,7 @@
             <field name="model">buah.jeruk</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="id"/>
                     <field name="name"/>
                     <field name="warna"/>
                 </tree>
@@ -93,6 +95,36 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
+                        <button name="hapus_warna_jeruk"
+                            string="Hapus Warna Jeruk"
+                            type="object"
+                        />
+                        <button name="hapus_warna_jeruk_simple"
+                            string="Hapus Warna Jeruk Simple"
+                            type="object"
+                        />
+                        <button name="hapus_all"
+                            string="Hapus All"
+                            type="object"
+                        />
+                        <button name="hapus_all_simple"
+                            string="Hapus All Simple"
+                            type="object"
+                        />
+                        <button name="set_warna_jeruk"
+                            string="Set Warna Jeruk"
+                            type="object"
+                        />
+                        <button name="hapus_jeruk"
+                            string="Hapus Jeruk"
+                            type="object"
+                            class="oe_highlight"
+                        />
+                        <button name="hapus_jeruk_simple"
+                            string="Hapus Jeruk Simple"
+                            type="object"
+                            class="oe_highlight"
+                        />
                     </header>
                     <sheet>
                         <group>

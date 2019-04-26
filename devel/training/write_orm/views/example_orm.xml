@@ -53,124 +53,139 @@
                                         <field name="currency_id"/>
                                     </tree>
                                 </field>
+                                <div class="o_group">
+                                    <div class="o_group_col_6" style="padding: 10px">
+                                        <div class="panel-body">
+                                            <p>1. Add Orm Line dengan menggunakan <b>.create()</b>
+                                            </p>
+                                            <span class="fa fa-pencil-square-o"></span>
+                                            <button name="create_orm_line" string="New Orm Line Records" type="object" />
+                                            <br/><br/>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>2. Add One2many dengan menggunakan <b>.write()</b> <b> ( 0, 0 , dict_val )</b>
+                                            </p>
+                                            <span class="fa fa-pencil-square-o"></span>
+                                            <button name="new_records" string="New One2many Records" type="object" />
+                                            <br/><br/>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>3. Memutus Koneksi satu baris dengan <b>.write()</b> <b> False</b>
+                                            </p>
+                                            <span class="fa fa-scissors"></span>
+                                            <button name="break_one_record" string="Break one record" type="object" />
+                                            <br/><br/>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>
+                                                4. <b>Men-Delete</b> satu baris terakhir dengan <b>.write()</b> <b> ( 3, ID )</b>
+                                            </p>
+                                            <span class="fa fa-trash-o"></span>
+                                            <button name="delete_one_record" string="Delete one record" type="object" />
+                                            <br/>
+                                        </div>
+
+                                    </div>
+                                    <div class="o_group_col_6" style="padding: 10px">
+                                        <div class="panel-body">
+                                            <p>5. Memutus Koneksi semua record dengan <b>.write()</b> <b> False</b>
+                                            </p>
+                                            <span class="fa fa-scissors"></span>
+                                            <span class="fa fa-scissors"></span>
+                                            <button name="break_all_record" string="Break all record" type="object" />
+                                            <br/><br/>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>6. Link to single 'nganggur' / existing record <b>( 4, ID )</b>
+                                            </p>
+                                            <span class="fa fa-compress"></span>
+                                            <button name="link_one_record" string="Link One record" type="object" />
+                                            <br/><br/>
+                                        </div>
+                                        <div class="panel-body">
+                                            
+                                            <p>7. Link to all 'nganggur' / existing record <span style="font-weight:bold;color : red">To do !</span></p>
+                                            <span class="fa fa-usb"></span>
+                                            <button name="link_all_nganggur_record" string="Link All 'nganggur' record" type="object" />
+                                            <br/>
+                                        </div>
+                                    </div>
+                                </div>
                             </page>
                             <page string="Bonus">
                                 <img src="/write_orm/static/img/logo.png" alt="Arkana"/>
                             </page>
+                            <page string="Bootstrap CSS">
+                                <div class="o_group">
+                                    <div class="o_group_col_6">
+                                        <div id="accordion" class="panel-group">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Bagaimana cara write ke One2many dan Many2many?</a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseOne" class="panel-collapse collapse" style="border: 1px solid gainsboro; padding: 20px; margin: 20px;">
+                                                    <div class="panel-body">
+                                                        <p>kita bisa tetap pakai self.write(), tapi ada syntax khusus <a href="https://www.odoo.com/forum/help-1/question/how-to-insert-value-to-a-one2many-field-in-table-with-create-method-28714" target="_blank">Learn more.</a></p>
+                                                        <p style="white-space: pre">
+                    self.write({
+                        'line_ids': [
+                            (0, 0, {
+                                'amount' : 200,
+                                'name' : 'Bapak Karto',
+                            },
+                            )
+                            (0, 0, {
+                                'amount' : 300,
+                                'name' : 'Bapak Sugi',
+                            },
+                            )
+                        ]
+                    })</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Adakah workaround Link Existing Record ?</a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseTwo" class="panel-collapse collapse" style="border: 1px solid gainsboro; padding: 20px; margin: 20px;">
+                                                    <div class="panel-body">
+                                                        <p>Kita bisa loop pada masing-masing record. lalu mengupdate example_id dengan ID tertentu</p>
+                                                        <p style="white-space: pre">
+            for line_doc in line_docs:
+                line_doc.example_id = &lt;<b><i>ID Header /Form Tertentu</i></b>&gt;
+                                                        </p>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Adakah workaround Delete all records ?</a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseThree" class="panel-collapse collapse" style="border: 1px solid gainsboro; padding: 20px; margin: 20px;">
+                                                    <div class="panel-body">
+                                                        <p>Kita bisa loop pada masing-masing record. lalu meng-unlink semua doc tersebut</p>
+                                                        <p style="white-space: pre">
+            for line_doc in line_docs:
+                line_doc.unlink()
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </page>
                         </notebook>
-                        <div class="o_group">
-                            <div class="o_group_col_6">
-                                <div id="accordion" class="panel-group">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Bagaimana cara write ke One2many dan Many2many?</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseOne" class="panel-collapse collapse" style="border: 1px solid gainsboro; padding: 20px; margin: 20px;">
-                                            <div class="panel-body">
-                                                <p>kita bisa tetap pakai self.write(), tapi ada syntax khusus <a href="https://www.odoo.com/forum/help-1/question/how-to-insert-value-to-a-one2many-field-in-table-with-create-method-28714" target="_blank">Learn more.</a></p>
-                                                <p style="white-space: pre">
-            self.write({
-                'line_ids': [
-                    (0, 0, {
-                        'amount' : 200,
-                        'name' : 'Bapak Karto',
-                    },
-                    )
-                    (0, 0, {
-                        'amount' : 300,
-                        'name' : 'Bapak Sugi',
-                    },
-                    )
-                ]
-            })</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. Adakah workaround Link Existing Record ?</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse" style="border: 1px solid gainsboro; padding: 20px; margin: 20px;">
-                                            <div class="panel-body">
-                                                <p>Kita bisa loop pada masing-masing record. lalu mengupdate example_id dengan ID tertentu</p>
-                                                <p style="white-space: pre">
-    for line_doc in line_docs:
-        line_doc.example_id = &lt;<b><i>ID Header /Form Tertentu</i></b>&gt;
-                                                </p>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. Adakah workaround Delete all records ?</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseThree" class="panel-collapse collapse" style="border: 1px solid gainsboro; padding: 20px; margin: 20px;">
-                                            <div class="panel-body">
-                                                <p>Kita bisa loop pada masing-masing record. lalu meng-unlink semua doc tersebut</p>
-                                                <p style="white-space: pre">
-    for line_doc in line_docs:
-        line_doc.unlink()
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="o_group_col_6">
-                                <div class="panel-body">
-                                    <p>Add Orm Line dengan menggunakan <b>self.env['example.orm.line'].create()</b>
-                                    </p>
-                                    <button name="create_orm_line" string="New Orm Line Records" type="object" />
-                                    <br/><br/>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Add One2many dengan menggunakan <b>( 0, 0 , dict_val )</b>
-                                    </p>
-                                    <button name="new_records" string="New One2many Records" type="object" />
-                                    <br/><br/>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Memutus Koneksi satu baris dengan menggunakan <b>False</b>
-                                    </p>
-                                    <button name="break_one_record" string="Break one record" type="object" />
-                                    <br/><br/>
-                                </div>
-                                <div class="panel-body">
-                                    <p>
-                                        <b>Men-Delete</b> satu baris terakhir dengan menggunakan <b>( 3, ID )</b>
-                                    </p>
-                                    <button name="delete_one_record" string="Delete one record" type="object" />
-                                    <p style="color : red">To do !</p>
-                                    <br/>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Memutus Koneksi semua record dengan menggunakan <b>False</b>
-                                    </p>
-                                    <button name="break_all_record" string="Break all record" type="object" />
-                                    <br/><br/>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Add existing record <b>( 4, ID )</b>
-                                    </p>
-                                    <button name="link_one_record" string="Link One record" type="object" />
-                                    <br/><br/>
-                                </div>
-                                <div class="panel-body">
-                                    <p>Add All existing record dengan loop <b>( 4, ID )</b> 
-                                    </p>
-                                    <button name="link_all_nganggur_record" string="Link All 'nganggur' record" type="object" />
-                                    <p style="color : red">To do !</p>
-                                    <br/>
-                                </div>
-                            </div>
-                        </div>
+                        
                 </form>
             </field>
         </record>
