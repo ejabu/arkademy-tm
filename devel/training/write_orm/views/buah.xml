@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="buah_mangga_tree">
+            <field name="name">buah.mangga.tree</field>
+            <field name="model">buah.mangga</field>
+            <field name="arch" type="xml">
+                <tree edit="false">
+                    <field name="name"/>
+                    <field name="warna"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="buah_mangga_form">
+            <field name="name">buah.mangga.form</field>
+            <field name="model">buah.mangga</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="create_buah_mangga"
+                            string="Create Buah Mangga"
+                            type="object"
+                        />
+                        <button name="create_buah_mangga_simple"
+                            string="Create Buah Mangga Simple"
+                            type="object"
+                        />
+                        <button name="create_buah_jeruk"
+                            string="Create Buah Jeruk"
+                            type="object"
+                        />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="warna"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="buah_mangga_action">
+            <field name="name">Buah Mangga</field>
+            <field name="res_model">buah.mangga</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="main_buah_mangga"
+            name="Buah Mangga"
+        />
+
+        <menuitem 
+            id="menu_buah_mangga"
+            name="Buah Mangga"
+            parent="main_buah_mangga"
+        />
+
+        <menuitem 
+            id="submenu_buah_mangga"
+            name="Buah Mangga"
+            parent="example_create"
+
+            action="buah_mangga_action"
+        />
+
+
+        <!-- List View -->
+        <record model="ir.ui.view" id="buah_jeruk_tree">
+            <field name="name">buah.jeruk.tree</field>
+            <field name="model">buah.jeruk</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="warna"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="buah_jeruk_form">
+            <field name="name">buah.jeruk.form</field>
+            <field name="model">buah.jeruk</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="warna"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="buah_jeruk_action">
+            <field name="name">Buah Jeruk</field>
+            <field name="res_model">buah.jeruk</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="main_buah_jeruk"
+            name="Buah Jeruk"
+        />
+
+        <menuitem 
+            id="menu_buah_jeruk"
+            name="Buah Jeruk"
+            parent="main_buah_jeruk"
+        />
+
+        <menuitem 
+            id="submenu_buah_jeruk"
+            name="Buah Jeruk"
+            parent="example_create"
+
+            action="buah_jeruk_action"
+        />
+
+    </data>
+</odoo>
