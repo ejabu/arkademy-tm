@@ -6,6 +6,7 @@
   ],
   'data': [
     'views/_menu_item.xml',
+    'views/buah.xml',
     'views/example_orm.xml',
     'views/example_orm_line.xml',
     # 'views/example_orm_line_dua_action.xml',
