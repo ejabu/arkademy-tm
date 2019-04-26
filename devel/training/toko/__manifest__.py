@@ -5,8 +5,8 @@
   'depends': [
   ],
   'data': [
-    'views/toko_struk.xml',
     'views/toko_pegawai.xml',
+    'views/toko_struk.xml',
   ],
   'qweb': [
   ],
