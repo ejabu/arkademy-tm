@@ -6,7 +6,7 @@
             <field name="model">cafe.order</field>
             <field name="inherit_id" ref="cafe_draft.cafe_order_form"/>
             <field name="arch" type="xml">
-                <field name="note" position="after">
+                <field name="note" position="before">
                     <field name="note_text"/>
                 </field>
             </field>
