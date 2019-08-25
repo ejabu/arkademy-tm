@@ -4,11 +4,7 @@ print("""
 Task :
     Hitung Selisih Umur Keluarga !
     - Bapak vs Ibu
-    - Bapak vs Abang
-    - Bapak vs Adik
-    - Ibu vs Abang
-    - Ibu vs Adik
-    - Abang vs Adik
+    - Bapak vs Abang, dst..
 """)
 
 def hitung(orang_1, orang_2):
@@ -23,6 +19,5 @@ umur_adik = 10
 hitung(umur_bapak, umur_ibu)
 hitung(umur_bapak, umur_abang)
 
-
-
+## .. Silahkan dilanjutkan ..
 

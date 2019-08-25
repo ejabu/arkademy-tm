@@ -22,7 +22,6 @@ label = [
 def hitung(id_1, id_2):
     selisih = ages[id_1] - ages[id_2]
     "'Bapak vs Ibu' :"
-
     print("'%s vs %s' : %s" % (label[id_1], label[id_2], selisih))
 
 

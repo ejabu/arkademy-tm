@@ -12,5 +12,3 @@ fruits = [
 
 for fruit in fruits:
     print(fruit)
-
-    

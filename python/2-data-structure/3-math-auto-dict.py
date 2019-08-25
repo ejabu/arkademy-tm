@@ -17,7 +17,6 @@ def hitung(id_1, id_2):
     selisih = ages[labels[id_1]] - ages[labels[id_2]]
     print("'%s vs %s' : %s" % (labels[id_1], labels[id_2], selisih))
 
-
 for person_1_id in [0, 1, 2]:
     for person_2_id in [0, 1, 2, 3]:
         if person_1_id < person_2_id:

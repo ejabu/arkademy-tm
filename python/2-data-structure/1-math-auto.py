@@ -12,7 +12,6 @@ ages = [
     10
 ]
 
-
 def hitung(orang_1, orang_2):
     selisih = orang_1 - orang_2
     print(selisih)
