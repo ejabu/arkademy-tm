@@ -25,7 +25,6 @@ class CafeOrderLine(models.Model):
                 }
             }
     
-    @api.multi
     @api.depends('quantity', 'price')
     def get_price_total(self):
         # self.price_total = self.quantity * self.price
