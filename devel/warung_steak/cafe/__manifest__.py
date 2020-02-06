@@ -9,6 +9,7 @@
     'views/cafe_order.xml',
     'views/cafe_pegawai.xml',
     'views/cafe_produk.xml',
+    'views/cafe_customer.xml',
   ],
   'qweb': [
   ],

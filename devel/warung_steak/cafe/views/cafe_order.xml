@@ -31,7 +31,14 @@
                         </div>
                         <group>
                             <group>
-                                <field name="customer" placeholder="misal : Khairul"/>
+                                <field name="customer_id" placeholder="misal : Khairul"/>
+                                <field name="address_id" 
+                                    domain="[('customer_id', '=', customer_id)]"
+                                    options="{'no_open': True, 'no_create': True}"
+                                    />
+                                <field name="phone"/>
+                                <field name="gender"/>
+                                <field name="category"/>
                             </group>
                             <group>
                                 <field name="date_order"/>

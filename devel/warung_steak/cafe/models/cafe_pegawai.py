@@ -21,6 +21,6 @@ class CafePegawai(models.Model):
 
     filename_ktp = fields.Char(string='Filename KTP')
     file_ktp = fields.Binary('Kartu Tanda Penduduk')
-    
+
     filename_kk = fields.Char(string='Filename KK')
     file_kk = fields.Binary('Kartu Keluarga')
