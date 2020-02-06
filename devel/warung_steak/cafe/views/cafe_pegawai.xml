@@ -79,6 +79,12 @@
                                 <field name="gender"/>
                                 <field name="is_part_time"/>
                             </group>
+                            <group string="Dokumen">
+                                <field name="filename_ktp"/>
+                                <field name="file_ktp" filename="filename_ktp"/>
+                                <field name="filename_kk"/>
+                                <field name="file_kk" filename="filename_kk"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
