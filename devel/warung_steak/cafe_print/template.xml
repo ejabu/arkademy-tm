@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_css_cafe_print" name="cafe_print assets" inherit_id="web.report_assets_pdf">
+            <xpath expr="." position="inside">
+                <link rel='stylesheet' href='/web/static/lib/bootstrap/css/bootstrap.css'/>
+                <link rel="stylesheet" href="/cafe_print/static/src/css/custom.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -22,7 +22,7 @@
   ],
   'qweb': [
   ],
-  'sequence': 100,
+  'sequence': 5,
   'auto_install': False,
   'installable': True,
   'application': True,

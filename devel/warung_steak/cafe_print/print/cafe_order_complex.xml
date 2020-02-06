@@ -25,7 +25,9 @@
 							}
 							table tr:nth-child(even){background-color: #f2f2f2;}
 						</style>
-						Nota : <span t-esc="doc.name"/>
+						<div class="custom text-success">Sales</div>
+                        <div id="custom-text">Penjualan</div>
+                        Nota : <span t-esc="doc.name" class="text-danger"/>
 						Status : <span t-esc="doc.state"/>
 						<div class="order_line">
 							<table>

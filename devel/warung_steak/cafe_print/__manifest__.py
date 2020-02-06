@@ -6,6 +6,7 @@
 		'cafe',
 	],
 	'data': [
+		'template.xml',
 		'print/cafe_order.xml',
 		'print/cafe_order_complex.xml',
 	],
