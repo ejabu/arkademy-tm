@@ -12,7 +12,7 @@ class CatalogWizard(models.TransientModel):
             ('minuman', 'Minuman'),
         ],
         string='Catalog Type',
-        required=True
+        required=True,
     )
 
     def process_wizard(self):
@@ -23,12 +23,12 @@ class CatalogWizard(models.TransientModel):
         produk_docs = self.env['cafe.produk'].search(search_query)
         report_xml_id = self.env.ref('cafe_print_popup.cafe_produk_print')
         vals = report_xml_id.report_action(produk_docs)
-
         # return vals
+
         return {
             'type': 'ir.actions.report',
             'name': 'Cafe Produk',
-            'report_type': 'qweb-pdf',
+            'report_type': 'qweb-html',
             'report_file': False,
             'report_name': 'cafe_print_popup.cafe_produk_template',
             'data': None,

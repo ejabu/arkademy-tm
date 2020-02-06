@@ -6,7 +6,7 @@
             model="cafe.produk"
             string="Cafe Produk"
             name="cafe_print_popup.cafe_produk_template"
-            report_type="qweb-pdf"
+            report_type="qweb-html"
             print_report_name="'Cafe Produk - %s' % (object.name)"
             paperformat="base.paperformat_us"/>
         />
