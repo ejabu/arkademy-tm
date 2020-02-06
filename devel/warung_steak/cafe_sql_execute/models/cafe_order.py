@@ -4,7 +4,6 @@ from odoo.exceptions import UserError, ValidationError
 class CafeOrder(models.Model):
     _inherit = 'cafe.order'
 
-    @api.multi
     def query_order_line(self):
         # A. Get Data
         query_sql = """

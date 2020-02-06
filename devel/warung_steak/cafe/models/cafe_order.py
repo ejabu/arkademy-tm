@@ -25,7 +25,6 @@ class CafeOrder(models.Model):
 
     amount_total = fields.Float(compute='_compute_total', string='Total', store=True)
     
-    @api.multi
     @api.depends('line_ids')
     def _compute_total(self):
         for order_doc in self:

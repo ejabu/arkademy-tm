@@ -22,13 +22,11 @@ class TokoStruk(models.Model):
             ('open', 'Open'),
         ], string='Status', default='draft')
 
-    @api.multi
     def set_open(self):
         for doc in self:
             doc.state = 'open'
 
 
-    @api.multi
     @api.depends('line_ids')
     def get_price_total(self):
         for doc in self:

@@ -8,7 +8,6 @@ class CafeOrder(models.Model):
 
     customer = fields.Char(readonly=True, states={'draft': [('readonly', False)]})
 
-    @api.multi
     def set_open(self):
         for doc in self:
             nama_baru = self.env['ir.sequence'].next_by_code('cafe.order.sequence')

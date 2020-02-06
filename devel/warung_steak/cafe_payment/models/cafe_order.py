@@ -7,7 +7,6 @@ class CafeOrder(models.Model):
     state = fields.Selection(selection_add=[("paid", "Paid")])
 
     
-    @api.multi
     def buka_wizard(self):
         # Hands On : Pass Context ke Popup
 

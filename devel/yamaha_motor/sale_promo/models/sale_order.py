@@ -6,7 +6,6 @@ class SaleOrder(models.Model):
 
     price_promo = fields.Float(string='Price Promo')
 
-    @api.multi
     def action_cancel(self):
         super(SaleOrder, self).action_cancel()
         self.write({'price_promo': 0})

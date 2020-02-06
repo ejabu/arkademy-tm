@@ -10,7 +10,6 @@ class BuahMangga(models.Model):
 
 
 
-    @api.multi
     def create_buah_mangga(self):
         self.env['buah.mangga'].create({
             'name': 'Mangga',
@@ -24,7 +23,6 @@ class BuahMangga(models.Model):
 
 
 
-    @api.multi
     def create_buah_mangga_simple(self):
         self.create({
             'name': 'Mangga',
@@ -37,7 +35,6 @@ class BuahMangga(models.Model):
 
 
 
-    @api.multi
     def create_buah_jeruk(self):
         import random
 
@@ -64,7 +61,6 @@ class BuahJeruk(models.Model):
 
 
 
-    @api.multi
     def hapus_warna_jeruk(self):
         self.env['buah.jeruk'].browse(self.id).write({
             'warna': ''
@@ -80,7 +76,6 @@ class BuahJeruk(models.Model):
 
 
 
-    @api.multi
     def hapus_warna_jeruk_simple(self):
         self.write({
             'warna': ''
@@ -91,7 +86,6 @@ class BuahJeruk(models.Model):
 
 
 
-    @api.multi
     def hapus_all(self):
         self.write({
             'name': '',
@@ -107,7 +101,6 @@ class BuahJeruk(models.Model):
 
 
 
-    @api.multi
     def hapus_all_simple(self):
         self.name = ''
         self.warna = ''
@@ -120,7 +113,6 @@ class BuahJeruk(models.Model):
 
 
 
-    @api.multi
     def set_warna_jeruk(self):
         import random
 
@@ -139,7 +131,6 @@ class BuahJeruk(models.Model):
 
 
 
-    @api.multi
     def hapus_jeruk(self):
         self.env['buah.jeruk'].browse(self.id).unlink()
         
@@ -149,6 +140,5 @@ class BuahJeruk(models.Model):
 
 
 
-    @api.multi
     def hapus_jeruk_simple(self):
         self.unlink()
