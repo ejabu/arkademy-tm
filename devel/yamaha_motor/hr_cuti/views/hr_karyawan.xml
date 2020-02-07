@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="jatah_cuti"/>
                     <field name="user_id"/>
                 </tree>
             </field>
@@ -26,6 +27,7 @@
                             <group>
                                 <field name="name"/>
                                 <field name="user_id"/>
+                                <field name="jatah_cuti"/>
                             </group>
                             <group>
                             </group>

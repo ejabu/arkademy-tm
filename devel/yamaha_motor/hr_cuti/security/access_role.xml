@@ -15,7 +15,6 @@
         <record model="res.groups" id="group_cuti_manager">
             <field name="name">Manager HR</field>
             <field name="category_id" ref="module_cuti"/>
-            <field name="implied_ids" eval="[(4, ref('hr_cuti.group_cuti_user'))]"/>
         </record>
     </data>
 </odoo>

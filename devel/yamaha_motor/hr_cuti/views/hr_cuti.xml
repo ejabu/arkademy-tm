@@ -8,6 +8,9 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="quantity"/>
                     <field name="user_id"/>
                 </tree>
             </field>
@@ -28,6 +31,9 @@
                                 <field name="user_id"/>
                             </group>
                             <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                                <field name="quantity"/>
                             </group>
                         </group>
                     </sheet>

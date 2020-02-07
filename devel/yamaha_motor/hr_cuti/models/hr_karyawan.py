@@ -9,3 +9,4 @@ class HrKaryawan(models.Model):
         comodel_name='res.users',
         string='User Terkait',
     )
+    jatah_cuti = fields.Integer(string='Jatah Cuti')
