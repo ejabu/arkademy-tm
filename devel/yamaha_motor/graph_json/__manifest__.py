@@ -1,19 +1,12 @@
 {
-  'name': 'HR Cuti',
+  'name': 'Graph JSON',
   'author': 'Arkana',
   'version': '0.1',
   'depends': [
+    # 'nama_modul',
   ],
   'data': [
-    'security/access_role.xml',
-    'security/ir.model.access.csv',
-    
-    'views/_menu_item.xml',
-    'views/hr_karyawan.xml',
-    'views/hr_cuti.xml',
-    'views/hr_cuti_todo.xml',
-    
-    'views/sequence.xml',
+    'views/stat_satu.xml',
   ],
   'qweb': [
   ],
@@ -22,7 +15,7 @@
   'installable': True,
   'application': True,
   'category': '- Arkademy Part 5',
-  'summary': 'Multi-Stage Approval',
+  'summary': 'Request JSON dan Display dengan Graph',
   'license': 'OPL-1',
   'website': 'https://www.arkana.co.id/',
   'description': '-'

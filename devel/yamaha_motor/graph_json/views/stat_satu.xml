@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="stat_satu_tree">
+            <field name="name">stat.satu.tree</field>
+            <field name="model">stat.satu</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="stat_satu_form">
+            <field name="name">stat.satu.form</field>
+            <field name="model">stat.satu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="create_new"
+                            string="Create New"
+                            type="object"
+                        />
+                        <button name="edit_existing"
+                            string="Edit Existing"
+                            type="object"
+                        />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="id"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Data">
+                                <field name="line_ids">
+                                    <tree>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="value"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="stat_satu_action">
+            <field name="name">Stat Satu</field>
+            <field name="res_model">stat.satu</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="main_stat_satu"
+            name="Stat Satu"
+        />
+
+        <menuitem
+            id="menu_stat_satu"
+            name="Stat Satu"
+            parent="main_stat_satu"
+        />
+
+        <menuitem
+            id="submenu_stat_satu"
+            name="Stat Satu"
+            parent="menu_stat_satu"
+
+            action="stat_satu_action"
+        />
+
+    </data>
+</odoo>
