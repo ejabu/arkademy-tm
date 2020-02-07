@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="stat_satu_line_tree">
+            <field name="name">stat.satu.line.tree</field>
+            <field name="model">stat.satu.line</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="stat_id"/>
+                    <field name="name"/>
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+        
+
+        <record model="ir.actions.act_window" id="stat_satu_line_action">
+            <field name="name">Stat Satu Line</field>
+            <field name="res_model">stat.satu.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem 
+            id="submenu_stat_satu_line"
+            name="Stat Satu Line"
+            parent="menu_stat_satu"
+            sequence="30"
+            action="stat_satu_line_action"
+        />
+
+    </data>
+</odoo>

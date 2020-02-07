@@ -60,7 +60,7 @@
             id="submenu_stat_satu_line_graph"
             name="Stat Satu Line Graph"
             parent="menu_stat_satu"
-            sequence="30"
+            sequence="40"
             action="stat_satu_line_graph_action"
         />
 
