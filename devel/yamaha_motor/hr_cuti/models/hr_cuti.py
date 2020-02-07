@@ -49,8 +49,17 @@ class HrCuti(models.Model):
         ('done', 'Done'),
     ], string='Status', default='draft')
 
+    @api.model_create_multi
+    def create(self, vals_list):
+        created_docs = super(HrCuti, self).create(vals_list)
+        for doc in created_docs:
+            doc.validate_allocation({})
+        return created_docs
+
+
     def write(self, vals):
-        self.validate_allocation(vals)
+        if vals.get('quantity'):
+            self.validate_allocation(vals)
         super(HrCuti, self).write(vals)
 
     def validate_allocation(self, vals):
@@ -59,7 +68,7 @@ class HrCuti(models.Model):
         karyawan_doc = self.env['hr.karyawan'].search(search_query, limit=1)
         jatah = karyawan_doc.jatah_cuti
         request = vals.get('quantity', self.quantity)
-        if jatah > request:
+        if not request or jatah > request:
             return True
         else:
             raise UserError('Mohon maaf tidak bisa ..')

@@ -19,7 +19,7 @@
             name="Todo"
             sequence="30"
             parent="main_hr_cuti"
-            groups="hr_cuti.group_cuti_manager,hr_cuti.group_cuti_director"
+            groups="hr_cuti.group_cuti_manager,hr_cuti.group_cuti_director,base.group_no_one"
         />
 
         <menuitem
