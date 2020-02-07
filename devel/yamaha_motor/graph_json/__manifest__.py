@@ -3,10 +3,10 @@
   'author': 'Arkana',
   'version': '0.1',
   'depends': [
-    # 'nama_modul',
   ],
   'data': [
     'views/stat_satu.xml',
+    'views/stat_satu_line_graph.xml',
   ],
   'qweb': [
   ],

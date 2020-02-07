@@ -49,7 +49,7 @@ class StatSatu(models.Model):
         # 1. Use This Doc
         doc = self
 
-        # 2. Isi One2many
+        # 2. Hapus isi One2many
         doc.write({
             'line_ids': [
                 (5, 0)

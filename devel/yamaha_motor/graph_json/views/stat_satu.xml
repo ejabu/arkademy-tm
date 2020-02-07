@@ -76,7 +76,7 @@
             id="submenu_stat_satu"
             name="Stat Satu"
             parent="menu_stat_satu"
-
+            sequence="20"
             action="stat_satu_action"
         />
 
