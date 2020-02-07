@@ -74,7 +74,14 @@ class HrCuti(models.Model):
 
     def set_confirm(self):
         for doc in self:
-            vals = {
-                'group_todo': 'hr_director',
-            }
-            doc.write(vals)
+            if self.user_has_groups('hr_cuti.group_cuti_manager'):
+                vals = {
+                    'group_todo': 'hr_director',
+                }
+                doc.write(vals)
+            if self.user_has_groups('hr_cuti.group_cuti_director'):
+                vals = {
+                    'group_todo': False,
+                    'state': 'done',
+                }
+                doc.write(vals)
