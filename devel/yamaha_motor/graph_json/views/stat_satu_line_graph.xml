@@ -37,11 +37,23 @@
             </field>
         </record>
 
+        <!-- Graph View -->
+        <record model="ir.ui.view" id="stat_satu_line_graph_graph">
+            <field name="name">stat.satu.line.graph.graph</field>
+            <field name="model">stat.satu.line.graph</field>
+            <field name="arch" type="xml">
+                <graph>
+                    <field name="name" type="row"/>
+                    <field name="value" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="stat_satu_line_graph_action">
             <field name="name">Stat Satu Line Graph</field>
             <field name="res_model">stat.satu.line.graph</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">graph,tree,form</field>
         </record>
 
         <menuitem 

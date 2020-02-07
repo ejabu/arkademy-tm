@@ -22,4 +22,14 @@ class StatSatuLineGraph(models.Model):
                     doc.value as value
                 FROM 
                     stat_satu_line doc
+                WHERE
+                    doc.stat_id = (
+                        SELECT
+                            id
+                        FROM
+                            stat_satu
+                        ORDER BY 
+                            write_date DESC 
+                        LIMIT 1
+                    )
         )""")
