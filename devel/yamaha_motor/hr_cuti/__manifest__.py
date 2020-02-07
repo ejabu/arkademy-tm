@@ -5,7 +5,9 @@
   'depends': [
   ],
   'data': [
+    'security/access_role.xml',
     'views/hr_karyawan.xml',
+    'views/hr_cuti.xml',
   ],
   'qweb': [
   ],

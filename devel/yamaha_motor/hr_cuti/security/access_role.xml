@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_cuti">
+            <field name="name">Cuti</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record model="res.groups" id="group_cuti_user">
+            <field name="name">Pegawai</field>
+            <field name="category_id" ref="module_cuti"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.groups" id="group_cuti_manager">
+            <field name="name">Manager HR</field>
+            <field name="category_id" ref="module_cuti"/>
+            <field name="implied_ids" eval="[(4, ref('hr_cuti.group_cuti_user'))]"/>
+        </record>
+    </data>
+</odoo>

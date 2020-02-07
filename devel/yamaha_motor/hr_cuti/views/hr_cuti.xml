@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="hr_cuti_tree">
+            <field name="name">hr.cuti.tree</field>
+            <field name="model">hr.cuti</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="hr_cuti_form">
+            <field name="name">hr.cuti.form</field>
+            <field name="model">hr.cuti</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="user_id"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hr_cuti_action">
+            <field name="name">HR Cuti</field>
+            <field name="res_model">hr.cuti</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="main_hr_cuti"
+            name="HR Cuti"
+        />
+
+        <menuitem 
+            id="menu_hr_cuti"
+            name="HR Cuti"
+            parent="main_hr_cuti"
+        />
+
+        <menuitem 
+            id="submenu_hr_cuti"
+            name="HR Cuti"
+            parent="menu_hr_cuti"
+
+            action="hr_cuti_action"
+        />
+
+    </data>
+</odoo>
