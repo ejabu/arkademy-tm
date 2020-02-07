@@ -1,5 +1,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError, ValidationError
+import requests
 
 class CafeOrder(models.Model):
     _inherit = 'cafe.order'
@@ -22,9 +23,19 @@ class CafeOrder(models.Model):
         result_rows = self._cr.dictfetchall()
         
         # B. Result in Popup
-        if self._context.get('popup'):
-            raise UserError(str(result_rows))
+        # if self._context.get('popup'):
+        #     raise UserError(str(result_rows))
 
         # C. Result as return value
+        print('Flag Here')
+        response = requests.get('https://pandi.id/stats/stats.json')
+        if self._context.get('popup'):
+            raise UserError(str(response.content))
+
+            my_json = response.content.decode('utf8').replace("'", '"')
+
+            json.loads(my_json)
+        
+        print('Flag Here')
         return result_rows            
         

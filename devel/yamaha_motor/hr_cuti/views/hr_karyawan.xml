@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="hr_karyawan_tree">
+            <field name="name">hr.karyawan.tree</field>
+            <field name="model">hr.karyawan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="hr_karyawan_form">
+            <field name="name">hr.karyawan.form</field>
+            <field name="model">hr.karyawan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="user_id"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hr_karyawan_action">
+            <field name="name">HR Karyawan</field>
+            <field name="res_model">hr.karyawan</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="main_hr_karyawan"
+            name="HR Karyawan"
+        />
+
+        <menuitem 
+            id="menu_hr_karyawan"
+            name="HR Karyawan"
+            parent="main_hr_karyawan"
+        />
+
+        <menuitem 
+            id="submenu_hr_karyawan"
+            name="HR Karyawan"
+            parent="menu_hr_karyawan"
+
+            action="hr_karyawan_action"
+        />
+
+    </data>
+</odoo>
