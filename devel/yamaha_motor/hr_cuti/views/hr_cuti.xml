@@ -5,7 +5,7 @@
         <record model="ir.ui.view" id="hr_cuti_tree">
             <field name="name">hr.cuti.tree</field>
             <field name="model">hr.cuti</field>
-            <field name="priority">10</field>
+            <field name="priority">1</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
@@ -23,7 +23,7 @@
         <record model="ir.ui.view" id="hr_cuti_form">
             <field name="name">hr.cuti.form</field>
             <field name="model">hr.cuti</field>
-            <field name="priority">10</field>
+            <field name="priority">1</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
