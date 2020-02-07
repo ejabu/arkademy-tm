@@ -23,6 +23,12 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
+                        <button name="set_waiting"
+                            string="Set Waiting"
+                            type="object"
+                            attrs="{'invisible':[('state', '=', 'waiting')]}"
+                        />
+                        <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
                         <group>
@@ -36,6 +42,11 @@
                                 <field name="quantity"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Info">
+                                <field name="group_todo"/>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

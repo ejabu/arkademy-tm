@@ -5,7 +5,7 @@ from odoo.exceptions import UserError
 class HrCuti(models.Model):
     _name = 'hr.cuti'
 
-    name = fields.Char(string='Pengajuan Cuti')
+    name = fields.Char(string='Pengajuan Cuti', copy=False)
 
     user_id = fields.Many2one(
         comodel_name='res.users',
@@ -21,6 +21,11 @@ class HrCuti(models.Model):
     date_from = fields.Date(string='Date From', default=fields.Date.today())
     date_to = fields.Date(string='Date To')
     quantity = fields.Integer(string='Quantity')
+    state = fields.Selection([
+            ('draft', 'Draft'),
+            ('waiting', 'Waiting'),
+            ('done', 'Done'),
+        ], string='Status', default='draft')
 
     def write(self, vals):
         self.validate_allocation(vals)
@@ -36,3 +41,14 @@ class HrCuti(models.Model):
             return True
         else:
             raise UserError('Mohon maaf tidak bisa ..')
+
+
+    def set_waiting(self):
+        for doc in self:
+            vals = {
+                'state': 'waiting',
+                'group_todo': 'hr_manager',
+            }
+            doc.write(vals)
+    
+    group_todo = fields.Char(string='Group Todo')
