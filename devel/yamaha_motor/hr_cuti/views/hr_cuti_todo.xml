@@ -32,16 +32,11 @@
             <field name="arch" type="xml">
                 <form edit="false" create="false" delete="false">
                     <header>
-                        <button name="set_waiting"
-                            string="Set Waiting"
-                            type="object"
-                            attrs="{'invisible':[('state', '=', 'waiting')]}"
-                        />
                         <button name="set_confirm"
                             string="Set Confirm"
                             type="object"
                             attrs="{'invisible':[('state', 'in', ['draft', 'done'])]}"
-                            groups="hr_cuti.group_cuti_manager"
+                            groups="hr_cuti.group_cuti_manager,hr_cuti.group_cuti_director"
                         />
                         <field name="state" widget="statusbar"/>
                     </header>
@@ -52,9 +47,9 @@
                         </div>
                         <group>
                             <group>
+                                <field name="quantity"/>
                                 <field name="date_from"/>
                                 <field name="date_to"/>
-                                <field name="quantity"/>
                             </group>
                             <group>
                                 <field name="note"/>

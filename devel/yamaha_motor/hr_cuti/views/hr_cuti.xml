@@ -47,9 +47,9 @@
                         </div>
                         <group>
                             <group>
+                                <field name="quantity"/>
                                 <field name="date_from"/>
                                 <field name="date_to"/>
-                                <field name="quantity"/>
                             </group>
                             <group>
                                 <field name="note"/>
@@ -59,6 +59,7 @@
                             <page string="Extra Info">
                                 <group>
                                     <field name="group_todo"/>
+                                    <field name="karyawan_id"/>
                                     <field name="user_id"/>
                                     <field name="create_date"/>
                                 </group>

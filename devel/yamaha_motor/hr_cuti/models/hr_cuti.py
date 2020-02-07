@@ -16,12 +16,24 @@ class HrCuti(models.Model):
         return nama_baru
 
     note = fields.Text(string='Note')
+    karyawan_id = fields.Many2one(
+        comodel_name='hr.karyawan',
+        string='Karyawan Terkait',
+        default=lambda self: self.get_this_karyawan(),
+        readonly=True,
+    )
     user_id = fields.Many2one(
         comodel_name='res.users',
         string='User Terkait',
         default=lambda self: self.get_this_user(),
         readonly=True,
     )
+
+    def get_this_karyawan(self):
+        search_query = [('user_id', '=', self.env.user.id)]
+        karyawan_doc = self.env['hr.karyawan'].search(search_query, limit=1)
+        karyawan_id = karyawan_doc.id
+        return karyawan_id
 
     def get_this_user(self):
         user_id = self.env.user.id
