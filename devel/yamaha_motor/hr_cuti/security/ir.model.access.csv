@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+158104370369302658,random,hr_cuti.model_hr_karyawan,hr_cuti.group_cuti_user,1,0,0,0
+158104370480523915,random,hr_cuti.model_hr_karyawan,hr_cuti.group_cuti_manager,1,1,1,1
+158104370657243573,random,hr_cuti.model_hr_karyawan,hr_cuti.group_cuti_director,1,0,0,0
+158104332342301643,random,hr_cuti.model_hr_cuti,hr_cuti.group_cuti_user,1,1,1,1
+158104332540068926,random,hr_cuti.model_hr_cuti,hr_cuti.group_cuti_manager,1,1,1,1
+158104332427034045,random,hr_cuti.model_hr_cuti,hr_cuti.group_cuti_director,1,1,1,1

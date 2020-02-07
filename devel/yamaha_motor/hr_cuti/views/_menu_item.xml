@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem
+            id="main_hr_cuti"
+            name="Aplikasi Cuti"
+        />
+
+        <menuitem
+            id="menu_hr_cuti"
+            name="Pengajuan Cuti"
+            sequence="20"
+            parent="main_hr_cuti"
+        />
+
+        <menuitem
+            id="menu_hr_cuti_todo"
+            name="Todo"
+            sequence="30"
+            parent="main_hr_cuti"
+            groups="hr_cuti.group_cuti_manager,hr_cuti.group_cuti_director"
+        />
+
+        <menuitem
+            id="menu_hr_cuti_data"
+            name="Data"
+            sequence="40"
+            parent="main_hr_cuti"
+        />
+    </data>
+</odoo>

@@ -38,27 +38,16 @@
         </record>
 
         <record model="ir.actions.act_window" id="hr_karyawan_action">
-            <field name="name">HR Karyawan</field>
+            <field name="name">Daftar Karyawan</field>
             <field name="res_model">hr.karyawan</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <menuitem 
-            id="main_hr_karyawan"
-            name="HR Karyawan"
-        />
-
-        <menuitem 
-            id="menu_hr_karyawan"
-            name="HR Karyawan"
-            parent="main_hr_karyawan"
-        />
-
-        <menuitem 
             id="submenu_hr_karyawan"
-            name="HR Karyawan"
-            parent="menu_hr_karyawan"
+            name="Daftar Karyawan"
+            parent="menu_hr_cuti_data"
 
             action="hr_karyawan_action"
         />

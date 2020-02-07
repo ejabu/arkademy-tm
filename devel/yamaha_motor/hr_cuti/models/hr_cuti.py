@@ -5,8 +5,17 @@ from odoo.exceptions import UserError
 class HrCuti(models.Model):
     _name = 'hr.cuti'
 
-    name = fields.Char(string='Pengajuan Cuti', copy=False)
+    name = fields.Char(
+        string='Pengajuan Cuti',
+        copy=False,
+        readonly=True,
+        default=lambda self: self.get_name())
 
+    def get_name(self):
+        nama_baru = self.env['ir.sequence'].next_by_code('hr.cuti.sequence')
+        return nama_baru
+
+    note = fields.Text(string='Note')
     user_id = fields.Many2one(
         comodel_name='res.users',
         string='User Terkait',
@@ -21,11 +30,12 @@ class HrCuti(models.Model):
     date_from = fields.Date(string='Date From', default=fields.Date.today())
     date_to = fields.Date(string='Date To')
     quantity = fields.Integer(string='Quantity')
+    group_todo = fields.Char(string='Group Todo', readonly=True)
     state = fields.Selection([
-            ('draft', 'Draft'),
-            ('waiting', 'Waiting'),
-            ('done', 'Done'),
-        ], string='Status', default='draft')
+        ('draft', 'Draft'),
+        ('waiting', 'Waiting'),
+        ('done', 'Done'),
+    ], string='Status', default='draft')
 
     def write(self, vals):
         self.validate_allocation(vals)
@@ -42,7 +52,6 @@ class HrCuti(models.Model):
         else:
             raise UserError('Mohon maaf tidak bisa ..')
 
-
     def set_waiting(self):
         for doc in self:
             vals = {
@@ -50,5 +59,10 @@ class HrCuti(models.Model):
                 'group_todo': 'hr_manager',
             }
             doc.write(vals)
-    
-    group_todo = fields.Char(string='Group Todo')
+
+    def set_confirm(self):
+        for doc in self:
+            vals = {
+                'group_todo': 'hr_director',
+            }
+            doc.write(vals)

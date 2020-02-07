@@ -6,8 +6,14 @@
   ],
   'data': [
     'security/access_role.xml',
+    'security/ir.model.access.csv',
+    
+    'views/_menu_item.xml',
     'views/hr_karyawan.xml',
     'views/hr_cuti.xml',
+    'views/hr_cuti_todo.xml',
+    
+    'views/sequence.xml',
   ],
   'qweb': [
   ],

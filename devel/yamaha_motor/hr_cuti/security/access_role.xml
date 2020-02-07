@@ -16,5 +16,9 @@
             <field name="name">Manager HR</field>
             <field name="category_id" ref="module_cuti"/>
         </record>
+        <record model="res.groups" id="group_cuti_director">
+            <field name="name">Director HR</field>
+            <field name="category_id" ref="module_cuti"/>
+        </record>
     </data>
 </odoo>
